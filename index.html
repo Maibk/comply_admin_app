@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html translate="no">
+  <head>
+    <meta charset="UTF-8" />
+    <base href="/" />
+    <script src="flutter_bootstrap.js" async></script>
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Comply" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <title>Comply</title>
+
+    <!-- <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+      name="viewport"
+    /> -->
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <style id="splash-screen-style">
+      html {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        min-height: 100%;
+        background-color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      /* Center the loader */
+      .center {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      .loader {
+        width: 50px;
+        aspect-ratio: 1.154;
+        position: relative;
+        background: conic-gradient(
+          from 120deg at 50% 64%,
+          #0000,
+          #ffbf43 1deg 120deg,
+          #0000 121deg
+        );
+        animation: l27-0 1.5s infinite cubic-bezier(0.3, 1, 0, 1);
+      }
+      .loader:before,
+      .loader:after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: inherit;
+        transform-origin: 50% 66%;
+        animation: l27-1 1.5s infinite;
+      }
+      .loader:after {
+        --s: -1;
+      }
+      @keyframes l27-0 {
+        0%,
+        30% {
+          transform: rotate(0);
+        }
+        70% {
+          transform: rotate(120deg);
+        }
+        70.01%,
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes l27-1 {
+        0% {
+          transform: rotate(calc(var(--s, 1) * 120deg)) translate(0);
+        }
+        30%,
+        70% {
+          transform: rotate(calc(var(--s, 1) * 120deg))
+            translate(calc(var(--s, 1) * -5px), 10px);
+        }
+        100% {
+          transform: rotate(calc(var(--s, 1) * 120deg)) translate(0);
+        }
+      }
+      #container {
+        text-align: center;
+      }
+    </style>
+    <script id="splash-screen-script">
+      function removeSplashFromWeb() {
+        document.getElementById("splash")?.remove();
+        document.getElementById("splash-branding")?.remove();
+        document.body.style.background = "transparent";
+      }
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div class="loader"></div>
+    </div>
+    <script>
+      {
+        {
+          flutter_build_config;
+        }
+      }
+      _flutter.loader.load();
+    </script>
+  </body>
+</html>
